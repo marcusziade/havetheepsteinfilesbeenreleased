@@ -1,13 +1,11 @@
 :root {
     --text-color: #000;
     --bg-color: #fff;
-    --counter-color: #666;
 }
 
 .dark-mode {
     --text-color: #fff;
     --bg-color: #121212;
-    --counter-color: #aaa;
 }
 
 body {
@@ -42,17 +40,6 @@ body {
     }
 }
 
-.view-counter {
-    position: fixed;
-    bottom: 20px;
-    font-size: 14px;
-    color: var(--counter-color);
-    opacity: 0.9;
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
 .no-text.explode span {
     display: inline-block;
     animation: explode 0.8s forwards;
@@ -61,23 +48,6 @@ body {
 @keyframes explode {
     0% { transform: scale(1); opacity: 1; }
     100% { transform: scale(3); opacity: 0; }
-}
-
-.mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-    border: 2px solid var(--text-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.mode-toggle:hover {
-    transform: scale(1.1);
 }
 
 .confetti {

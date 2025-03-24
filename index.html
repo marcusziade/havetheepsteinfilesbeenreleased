@@ -16,11 +16,28 @@
     <meta property="twitter:description" content="A quick answer to whether the Epstein files have been released.">
     <meta property="twitter:image" content="https://havetheepsteinfilesbeenreleased.xyz/preview.jpg">
     <link rel="stylesheet" href="css/styles.css">
+    <script type="module">
+        // Simple system dark mode handler
+        function applySystemDarkMode() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        // Apply dark mode on load
+        document.addEventListener('DOMContentLoaded', () => {
+            applySystemDarkMode();
+            
+            // Listen for system theme changes
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applySystemDarkMode);
+        });
+    </script>
 </head>
 <body>
     <div class="no-text" id="noText">No.</div>
-    <div class="view-counter" id="viewCounter">...</div>
-    <div class="mode-toggle" id="modeToggle" title="Toggle dark/light mode"></div>
     <audio id="clickSound" preload="auto" src="data:audio/mp3;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//tAwAAAAAAAAAAAAAAAAAAAAAAASW5mbwAAAA8AAAASAAAeMwAUFBQUFCgUFBQUFDMzMzMzM0dHR0dHR1xHR0dHR0dwcHBwcHCEcHBwcHCPj4+Pj4+kj4+Pj4+PuLi4uLi4zLi4uLi4uNDQ0NDQ0N/Q0NDQ0NDf39/f39/f7+/v7+/v7+/v7+/v7+/vIiIiIiIiIlJSUlJSUlJSUlJSUlJSbGxsbGxsbGxsbGxsbGx3d3d3d3d3d3d3d3d3d5OTk5OTk5OTk5OTk5OTraysr//7UMQAAAdsCSAAhng1YxWsAAEALq2trVtbW1tbW1tbW1tbW1tbdHR0dHR0dHR0dHR0dHR0mJiYmJiYmJiYmJiYmJiYsbGxsbGxsbGxsbGxsbGxwMDAwMDAwMDAwMDAwMDA1dXV1dXV1dXV1dXV1dXV1e/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/v7+/vESL235AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//sQxCwDs2wHMsCwzAAAA0gAAABExAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//swxAKDs0QFMmAQzAAAA0gAAABEQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"></audio>
 
     <script type="module" src="js/main.js"></script>
